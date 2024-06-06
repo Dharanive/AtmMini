@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Simulator</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <h1>ATM</h1>
+    </header>
+    <main>
+        <div id="login">
+            <h2>Enter PIN</h2>
+            <input type="password" id="pinInput" placeholder="PIN" required>
+            <button onclick="validatePIN()">Submit</button>
+            <p id="loginMessage"></p>
+        </div>
+        <div id="atmInterface" style="display: none;">
+            <h2>Welcome <span id="userName"></span></h2>
+            <button onclick="showBalance()">Check Balance</button>
+            <button onclick="showDeposit()">Deposit Money</button>
+            <button onclick="showWithdraw()">Withdraw Money</button>
+            <button onclick="showReceipt()">Print Receipt</button>
+            <button onclick="exitATM()">Exit</button>
+
+            <div id="balance" style="display: none;">
+                <h3>Your Balance: $<span id="balanceAmount"></span></h3>
+            </div>
+            <div id="deposit" style="display: none;">
+                <h3>Deposit Money</h3>
+                <input type="number" id="depositAmount" placeholder="Amount">
+                <button onclick="depositMoney()">Deposit</button>
+            </div>
+            <div id="withdraw" style="display: none;">
+                <h3>Withdraw Money</h3>
+                <input type="number" id="withdrawAmount" placeholder="Amount">
+                <button onclick="withdrawMoney()">Withdraw</button>
+                <p id="withdrawMessage"></p>
+            </div>
+            <div id="receipt" style="display: none;">
+                <h3>Receipt</h3>
+                <p>Balance: $<span id="receiptBalance"></span></p>
+                <p>Deposited: $<span id="receiptDeposit"></span></p>
+                <p>Withdrawn: $<span id="receiptWithdraw"></span></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 ATM Simulator</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
